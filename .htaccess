@@ -1,0 +1,35 @@
+# no indexing
+Options -Indexes +FollowSymLinks -MultiViews
+
+# hidden files
+<Files ~ "common.inc.php">
+	Order Deny,Allow
+	Deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+	# To WWWW Domain
+	# By deleting "#" on the next two rows.
+	#RewriteCond %{HTTP_HOST} !^www.moviebunkers.xyz$ [NC]
+  #RewriteRule ^(.*)$ http://www.moviebunkers.xyz/movies [L,R=301]
+  # Force HTTPS.
+  # By deleting "#" on the next two rows.
+  #RewriteCond %{HTTPS} !=on
+  #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # !IMPORTANT!
+  # Set your RewriteBase here and don't forget trailing and leading slashes.
+  # If your page resides at
+  #  http://www.example.com/app/moviebunkers
+  # then use
+  # RewriteBase /app/moviebunkers/
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+  ErrorDocument 404 /index.php
+</IfModule>

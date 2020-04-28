@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{$language}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="Author" content="Charantej">
+	{if $main == 'movies/movie.html'}
+	<title>{$movie->name|htmlentities:3:'UTF-8'} - {$movie->year|htmlentities:3:'UTF-8'} | MovieBunkers </title>
+	{else}
+    <title>Movie Bunkers - Personal Movie Play list - {$smarty.const._TITLE|htmlentities:3:'UTF-8'}</title>
+	{/if}
+      <!-- SMO TAGS-->
+    	{if $main == 'movies/movie.html'}
+      <meta property="og:type" content="video.movie,image.movie"/>
+      <meta property="og:locale" content="en_US"/>
+      <meta property="og:site_name" content="MovieBunkers"/>
+      <meta property="og:title" content="{$movie->name|htmlentities:3:'UTF-8'} - {$movie->year|htmlentities:3:'UTF-8'} | MovieBunkers"/>
+      <meta property="og:url" content="https://www.moviebunkers.xyz"/>
+      <meta property="og:description" content="{$movie->name|htmlentities:3:'UTF-8'} {$movie->year|htmlentities:3:'UTF-8'} Watch Movies in my PlayList"/>
+      <meta property="og:image" content="{$photo}"/>
+      {else}
+      <meta property="og:type" content="video.movie,image.movie"/>
+      <meta property="og:locale" content="en_US"/>
+      <meta property="og:description" content="Personal Movie PlayList Of Charanteja yandrapati."/>
+      <meta property="og:title" content="Movie Bunkers - Personal Movie Play list - {$smarty.const._TITLE|htmlentities:3:'UTF-8'}"/>
+      <meta property="og:site_name" content="MovieBunkers"/>
+      <meta property="og:url" content="https://www.moviebunkers.xyz"/>
+      <meta property="og:image" content="/tpl/default/images/movie-strip.png"/>
+      {/if}
+      <!-- SEO TAGS-->
+      <!--  meta description -->
+    {if $main == 'movies/movie.html'}
+    <meta name="description" content="{$movie->name|htmlentities:3:'UTF-8'} {$movie->year|htmlentities:3:'UTF-8'} Watch Movies in my PlayList">
+    {else}
+    <meta name="description" content="Download or Watch Latest Telugu Movies,Hollywood Movies,Tamil movies,Hindi Movies,English Movies,Movie Trailer From My Personal Play list MovieBunkers">
+  	{/if}
+   <!-- meta keywords -->
+    {if $main == 'movies/movie.html'}
+    <meta name="keywords" content="Download {$movie->name|htmlentities:3:'UTF-8'} {$movie->year|htmlentities:3:'UTF-8'}">
+    {else}
+    <meta name="keywords" content="download telugu movies,download latest telugu movies,download Hollywood movies,download tamil movies,Latest Movies,">
+    {/if}
+
+    <meta name=”robots” content="index, follow">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="apple-touch-icon" sizes="180x180" href="{$tpl_include}images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="{$tpl_include}images/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="{$tpl_include}images/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" href="{$tpl_include}images/favicon/favicon.ico">
+    <link rel="stylesheet" href="{$tpl_include}css/php4dvd.min.css">
+    <link rel="stylesheet" href="{$tpl_include}css/skins/{$template_skin}.min.css">
+	{if $main == 'movies/movie.html'}
+    <link rel="stylesheet" href="{$tpl_include}css/magnific-popoup.min.css">
+	{/if}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="{$tpl_include}javascripts/html5/html5shiv.min.js"></script>
+        <script src="{$tpl_include}javascripts/html5/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="hold-transition {$template} {$template_skin} fixed {if $main != 'movies/collection.html'}sidebar-collapse{/if}">

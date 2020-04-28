@@ -1,0 +1,59 @@
+{if !$loggedin}
+<div class="login-box">
+	<div class="login-box-body">
+		<section class="content-header">
+			<h1>
+				<small><b>Login to</b></small>     <b>Movie</b><u>B</u>unkers <i class="fa fa-film"></i>
+			</h1>
+		</section>
+	<p class="login-box-msg"></p>
+	<form id="loginform" name="loginform" method="POST">
+		<div class="form-group has-feedback">
+			<div class="input-group">
+				<span class="input-group-addon">@</span>
+				<input type="text" id="username" name="username" class="form-control required" autofocus placeholder="{$smarty.const.USER_NAME|htmlentities:3:'UTF-8'}" value="{if isset($username)}{$username|htmlentities:3:'UTF-8'}{/if}">
+			</div>
+		</div>
+		<div class="form-group has-feedback">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+				<input type="password" id="password" name="password" class="form-control required" placeholder="{$smarty.const.PASSWORD|htmlentities:3:'UTF-8'}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8">
+				<div class="checkbox">
+					<label for="rememberme">
+						<input type="checkbox" id="rememberme" name="rememberme"> {$smarty.const.REMEMBER_ME|htmlentities:3:'UTF-8'}
+					</label>
+				</div>
+			</div><!-- /.col -->
+			<div class="col-xs-4">
+				<button type="submit" class="btn btn-primary btn-block btn-flat">{$smarty.const.LOG_IN|htmlentities:3:'UTF-8'}</button>
+			</div><!-- /.col -->
+		</div>
+	</form>
+	{if isset($login_error)}
+	<br/>
+	<div class="callout callout-danger">
+		<p>{$smarty.const.INCORRECT_USERNAME_OR_PASSWORD|htmlentities:3:'UTF-8'}</p>
+		<p> <b> Note: </b> </p>
+		<p> <b> Forgot Username Or Password ? </b> </p>
+		<p> Dont worry Follow the steps to regain your account</p>
+		<p> Raise the issue in Telegram Group  </p>
+		<p> (Or) </p>
+		<p> Contact admin Via Email </p>
+	</div>
+
+	<div class="callout callout-warning">
+		<p> <b>Incase you are new to Movie Bunkers... </b> </p>
+		<p> Fill Out The join Us Form </p>
+    <p> <b> For MovieBunkers Membership Account </b> </p>
+		</div>
+		<div class="callout callout-success">
+     <p> Click to join Us  &#187;&#187; <a href="#">  <button class="btn btn-primary" type="button" name="Go to Join Us Form">join Us</button> </a> </p>
+    </div>
+	{/if}
+	</div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
+{/if}
