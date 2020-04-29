@@ -27,14 +27,14 @@
 {if $movie->seasons && $movie->seasons != 0}
     <li>
   		<a href="/movies/1337x/?word={$movie->name|lower}/" target="_blank" rel="noreferrer noopener">
-  		<i class="fa fa-download fa-fw" title="Download" aria-hidden="true"></i>
-  		<span class="hidden-sm">Download</span></a>
+        <i class="fa fa-download fa-fw" title="{$smarty.const.DOWNLOAD_MOVIE|htmlentities:3:'UTF-8'}" aria-hidden="true"></i>
+  		<span class="hidden-sm">{$smarty.const.DOWNLOAD_MOVIE|htmlentities:3:'UTF-8'}</span></a>
   	</li>
  {else}
  <li>
    <a href="/movies/1337x/?word={$movie->name|lower} {$movie->year|urlencode}/" target="_blank" rel="noreferrer noopener">
-   <i class="fa fa-download fa-fw" title="Download" aria-hidden="true"></i>
-   <span class="hidden-sm">Download</span></a>
+     <i class="fa fa-download fa-fw" title="{$smarty.const.DOWNLOAD_MOVIE|htmlentities:3:'UTF-8'}" aria-hidden="true"></i>
+   		<span class="hidden-sm">{$smarty.const.DOWNLOAD_MOVIE|htmlentities:3:'UTF-8'}</span></a>
  </li>
  {/if}
 

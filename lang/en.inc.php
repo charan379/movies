@@ -45,6 +45,7 @@ define("REMEMBER_ME",								"Remember me");
 define("ADD",										"Add");
 define("UPDATE_ALL_MOVIE_INFORMATION",				"Update all");
 define("EXPORT_TO_CSV",								"Export");
+define("EXPORT_TO_XLS",                "Export to XLS");
 // Search
 define("SEARCH_DEFAULT_TEXT",						"Search...");
 define("CATEGORIES",								"Categories");
@@ -87,6 +88,7 @@ define("STATISTICS",								"Statistics");
 define("VISIT_IMDB",								"Visit IMDb");
 define("VIEW_TRAILER",								"View trailer");
 define("DOWNLOAD_COVER",							"Download cover");
+define("DOWNLOAD_MOVIE",							"Download");
 define("FAVOURITE",									"Favourite");
 define("NOT_FAVOURITE",								"Not favourite");
 define("OWN",										"Own");
