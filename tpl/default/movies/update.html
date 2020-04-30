@@ -82,7 +82,7 @@
 					<img src="{$movie->photo()}" alt="{$movie->name|htmlentities:3:'UTF-8'}" title="{$movie->name|htmlentities:3:'UTF-8'}">
 					{/if}
 				</div>
-				
+
 				<div class="{if $hasPhoto}maininfo{/if}">
 					<div class="box box-primary">
 						<div class="box-header with-border">
@@ -237,13 +237,13 @@
 								{if isset($movie)}
 								<div class="form-group has-feedback">
 									<label for="imdbphoto" class="{$colWidthSmall} control-label">
-										{$smarty.const.PHOTO_FROM_IMDB|htmlentities:3:'UTF-8'} 
+										{$smarty.const.PHOTO_FROM_IMDB|htmlentities:3:'UTF-8'}
 									</label>
 									<div class="{$colWidthLarge}">
 										<div class="checkbox">
 											<label>
 												<input type="checkbox" name="imdbphoto">
-												{$smarty.const.DOWNLOAD_FROM_IMDB|htmlentities:3:'UTF-8'} 
+												{$smarty.const.DOWNLOAD_FROM_IMDB|htmlentities:3:'UTF-8'}
 											</label>
 										</div>
 									</div>
@@ -251,7 +251,7 @@
 								{/if}
 								<div class="form-group has-feedback">
 									<label for="photo" class="{$colWidthSmall} control-label">
-										{$smarty.const.PHOTO|htmlentities:3:'UTF-8'} 
+										{$smarty.const.PHOTO|htmlentities:3:'UTF-8'}
 										{if isset($movie->name)}<a href="https://www.themoviedb.org/search?query={$movie->name|urlencode}" target="_blank" rel="noreferrer noopener"><i class="fa fa-search" title="{$smarty.const.SEARCH_FOR_PHOTO|htmlentities:3:'UTF-8'} - The Movie Database (TMDb)" aria-hidden="true"></i></a>{/if}
 										{if isset($movie->name)}<a href="https://www.cinematerial.com/search?q={$movie->name|urlencode}" target="_blank" rel="noreferrer noopener"><i class="fa fa-search" title="{$smarty.const.SEARCH_FOR_PHOTO|htmlentities:3:'UTF-8'} - CineMaterial" aria-hidden="true"></i></a>{/if}
 									</label>
@@ -271,6 +271,12 @@
 										<input type="text" name="trailer" id="trailer" class="form-control url" value="{if isset($movie)}{$movie->trailer|htmlentities:3:'UTF-8'}{/if}" placeholder="{$smarty.const.TRAILER_URL|htmlentities:3:'UTF-8'}">
 									</div>
 								</div>
+								<div class="form-group has-feedback">
+								<label for="dolink" class="{$colWidthSmall} control-label">{$smarty.const.MOVIE_URL|htmlentities:3:'UTF-8'} {if isset($movie)}<a href="https://www.google.com/search?q=index+of+{$movie->name|urlencode}+{$movie->year|urlencode}+movie" target="_blank" rel="noreferrer noopener"><i class="fa fa-search" title="{$smarty.const.SEARCH_FOR_MOVIE|htmlentities:3:'UTF-8'} - Google Index" aria-hidden="true"></i></a>{/if}</label>
+								<div class="{$colWidthLarge}">
+									<input type="text" name="dolink" id="dolink" class="form-control url" value="{if isset($movie)}{$movie->dolink|htmlentities:3:'UTF-8'}{/if}" placeholder="{$smarty.const.MOVIE_FILE_URL|htmlentities:3:'UTF-8'}">
+								</div>
+							</div>
 								<div class="form-group has-feedback">
 									<label for="notes" class="{$colWidthSmall} control-label">{$smarty.const.PERSONAL_NOTES|htmlentities:3:'UTF-8'}</label>
 									<div class="{$colWidthLarge}">

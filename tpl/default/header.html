@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="Author" content="Charantej">
 	{if $main == 'movies/movie.html'}
-	<title>{$movie->name|htmlentities:3:'UTF-8'} - {$movie->year|htmlentities:3:'UTF-8'} | MovieBunkers </title>
-	{else}
-    <title>Movie Bunkers - Personal Movie Play list - {$smarty.const._TITLE|htmlentities:3:'UTF-8'}</title>
-	{/if}
+	<title>{$movie->name|htmlentities:3:'UTF-8'} - {$movie->year|htmlentities:3:'UTF-8'} | {$smarty.const._TITLE|htmlentities:3:'UTF-8'}</title>
+	{elseif $main == 'movies/download.html'}
+    <title>{$smarty.const.DOWNLOAD_MOVIE|htmlentities:3:'UTF-8'} - {$movie->name|htmlentities:3:'UTF-8'} - {$movie->year|htmlentities:3:'UTF-8'} | {$smarty.const._TITLE|htmlentities:3:'UTF-8'}</title>
+  {else}
+  <title>{$smarty.const._TITLE|htmlentities:3:'UTF-8'} - Personal Movie Play list</title>
+  {/if}
       <!-- SMO TAGS-->
     	{if $main == 'movies/movie.html'}
       <meta property="og:type" content="video.movie,image.movie"/>
       <meta property="og:locale" content="en_US"/>
-      <meta property="og:site_name" content="MovieBunkers"/>
-      <meta property="og:title" content="{$movie->name|htmlentities:3:'UTF-8'} - {$movie->year|htmlentities:3:'UTF-8'} | MovieBunkers"/>
+      <meta property="og:site_name" content="{$smarty.const._TITLE|htmlentities:3:'UTF-8'}"/>
+      <meta property="og:title" content="{$movie->name|htmlentities:3:'UTF-8'} - {$movie->year|htmlentities:3:'UTF-8'} | {$smarty.const._TITLE|htmlentities:3:'UTF-8'}"/>
       <meta property="og:url" content="https://www.moviebunkers.xyz"/>
       <meta property="og:description" content="{$movie->name|htmlentities:3:'UTF-8'} {$movie->year|htmlentities:3:'UTF-8'} Watch Movies in my PlayList"/>
       <meta property="og:image" content="{$photo}"/>
@@ -22,8 +24,8 @@
       <meta property="og:type" content="video.movie,image.movie"/>
       <meta property="og:locale" content="en_US"/>
       <meta property="og:description" content="Personal Movie PlayList Of Charanteja yandrapati."/>
-      <meta property="og:title" content="Movie Bunkers - Personal Movie Play list - {$smarty.const._TITLE|htmlentities:3:'UTF-8'}"/>
-      <meta property="og:site_name" content="MovieBunkers"/>
+      <meta property="og:title" content="{$smarty.const._TITLE|htmlentities:3:'UTF-8'} - Personal Movie Play list"/>
+      <meta property="og:site_name" content="{$smarty.const._TITLE|htmlentities:3:'UTF-8'}"/>
       <meta property="og:url" content="https://www.moviebunkers.xyz"/>
       <meta property="og:image" content="/tpl/default/images/movie-strip.png"/>
       {/if}
@@ -32,7 +34,7 @@
     {if $main == 'movies/movie.html'}
     <meta name="description" content="{$movie->name|htmlentities:3:'UTF-8'} {$movie->year|htmlentities:3:'UTF-8'} Watch Movies in my PlayList">
     {else}
-    <meta name="description" content="Download or Watch Latest Telugu Movies,Hollywood Movies,Tamil movies,Hindi Movies,English Movies,Movie Trailer From My Personal Play list MovieBunkers">
+    <meta name="description" content="Download or Watch Latest Telugu Movies,Hollywood Movies,Tamil movies,Hindi Movies,English Movies,Movie Trailer From My Personal Play list {$smarty.const._TITLE|htmlentities:3:'UTF-8'}">
   	{/if}
    <!-- meta keywords -->
     {if $main == 'movies/movie.html'}

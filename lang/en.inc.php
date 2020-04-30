@@ -15,7 +15,7 @@ defined('DIRECTACCESS') OR exit('No direct script access allowed');
 /**
  * Title
  */
-define("_TITLE",									"My collection");
+define("_TITLE",									"Moviebunkers");
 
 /**
  * Menu
@@ -29,6 +29,7 @@ define("USER_MANAGEMENT",							"User management");
 define("LOG_IN", 									"Log in");
 define("LOG_OUT",									"Log out");
 define("ARE_YOU_SURE_YOU_WANT_TO_LOG_OUT",			"Are you sure you want to log out?");
+
 
 /**
  * Log in page
@@ -103,6 +104,9 @@ define("REMOVE",									"Remove");
 define("LOANED_OUT",								"Loaned out");
 define("TO",										"to");
 define("ON",										"on");
+define("DOWNLOAD_PAGE_HEAD",            "Download Page");
+define("DOWNLOAD_MOVIE_SECTION",        "Download Links");
+define("GO_TO_TORRENTS",            "Go To Torrents");
 
 /**
 * Add/edit movie
@@ -164,6 +168,9 @@ define("WRITER",									"Writer");
 define("PRODUCER",									"Producer");
 define("MUSIC",										"Music");
 define("CAST",										"Cast");
+define("MOVIE_FILE_URL",           "Movie Download-able URL");
+define("MOVIE_URL",                  "Movie URL");
+define("SEARCH_FOR_MOVIE",           "Search For Movie");
 // Automatic update
 define("AUTOUPDATE_INFO",							"Your movies are automatically updated from IMDb. This may take a while, so please be patient...");
 define("STOP_UPDATE",								"Stop the update");

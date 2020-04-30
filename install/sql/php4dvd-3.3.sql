@@ -1,6 +1,6 @@
--- 
+--
 -- Database structure
--- 
+--
 
 ALTER DATABASE __DATABASE__ CHARACTER SET = __CHARACTER__ COLLATE = __COLLATE__;
 
@@ -54,6 +54,7 @@ CREATE TABLE `movies` (
   `loanname` varchar(100) COLLATE __COLLATE__ NOT NULL,
   `added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `trailer` varchar(255) COLLATE __COLLATE__ NOT NULL,
+  `dolink` varchar(255) COLLATE __COLLATE__ NOT NULL,
   `subtitles` varchar(255) COLLATE __COLLATE__ NOT NULL,
   `audio` varchar(255) COLLATE __COLLATE__ NOT NULL,
   `video` varchar(255) COLLATE __COLLATE__ NOT NULL,

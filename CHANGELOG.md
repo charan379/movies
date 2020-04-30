@@ -1,3 +1,6 @@
+## 3.9.1 (2020-04-30)
+### Added
+  - Downloading movies page added
 ## 3.9.0 (2020-01-26)
 ### Added
   - French language by @maxlefou #55

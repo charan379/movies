@@ -107,6 +107,17 @@ switch ($go) {
 							require_once($loc . "includes/movie.inc.php");
 						}
 						break;
+	case "download":/**
+            * Opens the download page  */
+						// Viewing movie information is only possible when logged in or when guests can view movie information
+						if($loggedin || $guestview) {
+							// Template
+							$Website->assign("main", "movies/download.html");
+
+							// Movies
+							require_once($loc . "includes/movie.inc.php");
+						}
+ 	          break;
 
 	case "trailer":		/**
 						 * Show movie trailer
@@ -196,16 +207,33 @@ switch ($go) {
 						}
 						break;
 
-	case "export":		/**
-						 * Download movie list as CSV
-						 */
-						// Exporting movies is only possible when logged in
-						if($loggedin) {
-							// Export
-							require_once($loc . "includes/export.inc.php");
-						}
-						exit();
+	case "export-to-csv":		/**
+             	* Download movie list as CSV
+             	*/
+              // Exporting movies is only possible when logged in
+             if($loggedin) {
+	          // Export
+	           require_once($loc . "includes/export.inc.php");
+	           exit();
+            }
+             else {
+	            $Website->assign("main", "users/login.html");
+            }
 						break;
+
+	case "export-to-xls":		/**
+									* Download movie list as XLS Sheet
+						  	  */
+					  	// Exporting movies is only possible when logged in
+			  			if($loggedin) {
+			  			// Export
+					    header("Location: export-to-xls/index.php");
+							}
+			  			 else {
+			  		    $Website->assign("main", "users/login.html");
+			     	}
+	 				 break;
+
 
 	case "users":		/**
 						 * Modify the user accounts
