@@ -3,6 +3,7 @@ Moviebunkers 3.X
 
 Moviebunkers is a small yet powerful, php/mysql powered movie database.
 
+
 Features
 =======
 
@@ -23,6 +24,8 @@ Features
 - Editable templates using Smarty (no PHP knowledge is required)
 - SEO Friendly URL
 - Automatic YouTube trailers
+- Automatic Torrent Scrapper
+- Movie Downloads
 
 Requirements
 =======
@@ -82,10 +85,12 @@ $settings["defaultlanguage"] = "pl"; // Polish
 Screenshots
 =======
 
-<img src="docs/screenshots/login.jpeg" alt="Login" width="45%"> <img src="docs/screenshots/collection.jpeg" alt="Movie collection" width="45%">
-<img src="docs/screenshots/search.jpeg" alt="Search" width="45%"> <img src="docs/screenshots/movie.jpeg" alt="Movie" width="45%">
-<img src="docs/screenshots/trailer.jpeg" alt="Movie trailer" width="45%"> <img src="docs/screenshots/addmovie.jpeg" alt="Add movies" width="45%">
-<img src="docs/screenshots/imdb.jpeg" alt="Search from IMDb" width="45%"> <img src="docs/screenshots/users.jpeg" alt="Users" width="45%">
+<img src="docs/screenshots/login.jpg" alt="Login" width="45%"> <img src="docs/screenshots/collection.jpg" alt="Movie collection" width="45%">
+<img src="docs/screenshots/search.jpg" alt="Search" width="45%"> <img src="docs/screenshots/search2.jpeg" alt="Search" width="45%"> <img src="docs/screenshots/moviepage.jpg" alt="Movie" width="45%">
+<img src="docs/screenshots/trailer.jpg" alt="Movie trailer" width="45%"> <img src="docs/screenshots/download.jpeg" alt="Add movies" width="45%">
+<img src="docs/screenshots/add.jpg" alt="Search from IMDb" width="45%"> <img src="docs/screenshots/users.jpg" alt="Users" width="45%">
+<img src="docs/screenshots/torrent.jpg" alt="Users" width="45%"> <img src="docs/screenshots/export.jpg" alt="Users" width="45%">
+<img src="docs/screenshots/iconinfo.jpg" alt="Users" width="45%"> <img src="docs/screenshots/trailer.jpg" alt="Users" width="45%">
 
 Configuration / FAQ
 =======
@@ -175,8 +180,8 @@ If you just want to change the color, please check `config/config.defaults.php` 
 
 Thanks to
 =======
-
-Thanks to cyberolf. He originally created [Moviebunkers](https://sourceforge.net/projects/Moviebunkers/).
+Thanks to johaneklund. For continuing the work of cyberolf.
+Thanks to cyberolf. He originally created [php4dvd](https://sourceforge.net/projects/php4dvd/).
 
 Thanks to morphias0. He wrote the first automatic installer/upgrade script
 and came up with some extra features.
