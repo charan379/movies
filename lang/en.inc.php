@@ -105,8 +105,9 @@ define("LOANED_OUT",								"Loaned out");
 define("TO",										"to");
 define("ON",										"on");
 define("DOWNLOAD_PAGE_HEAD",            "Download Page");
-define("DOWNLOAD_MOVIE_SECTION",        "Download Links");
+define("DOWNLOAD_MOVIE_SECTION",        "Download & Streaming Links");
 define("GO_TO_TORRENTS",            "Go To Torrents");
+define("GO_TO_STREAM",               "Watch Online");
 
 /**
 * Add/edit movie
