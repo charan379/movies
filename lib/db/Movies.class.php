@@ -97,8 +97,9 @@ class Movies extends Database {
 				$query .= "(";
 				$query .= "`name` LIKE ? OR ";		$bindings[] = '%'.$word.'%';
 				$query .= "`aka` LIKE ? OR ";		$bindings[] = '%'.$word.'%';
-				$query .= "`year` LIKE ? OR ";		$bindings[] = '%'.$word.'%';
-				$query .= "`plotoutline` LIKE ?";	$bindings[] = '%'.$word.'%';
+				#$query .= "`plotoutline` LIKE ? OR ";		$bindings[] = '%'.$word.'%';
+				# un-comment above line if u want to search in plotoutline column from DB
+				$query .= "`year` LIKE ?";	$bindings[] = '%'.$word.'%';
 				$query .= ")";
 
 				// Next word
@@ -106,11 +107,15 @@ class Movies extends Database {
 					$query .= " AND ";
 			}
 			$query .= ") OR (";
-			$query .= "`director` LIKE ? OR ";	$bindings[] = '%'.implode(' ',$words).'%';
-			$query .= "`writer` LIKE ? OR ";	$bindings[] = '%'.implode(' ',$words).'%';
-			$query .= "`producer` LIKE ? OR ";	$bindings[] = '%'.implode(' ',$words).'%';
-			$query .= "`music` LIKE ? OR ";		$bindings[] = '%'.implode(' ',$words).'%';
-			$query .= "`cast` LIKE ? ";			$bindings[] = '%'.implode(' ',$words).'%';
+			#$query .= "`cast` LIKE ? OR ";	$bindings[] = '%'.implode(' ',$words).'%';
+			# un-comment above line if u want to search in Cast column from DB
+			#$query .= "`writer` LIKE ? OR ";	$bindings[] = '%'.implode(' ',$words).'%';
+			# un-comment above line if u want to search in writer column from DB
+			#$query .= "`producer` LIKE ? OR ";	$bindings[] = '%'.implode(' ',$words).'%';
+			# un-comment above line if u want to search in producer column from DB
+			#$query .= "`music` LIKE ? OR ";		$bindings[] = '%'.implode(' ',$words).'%';
+			# un-comment above line if u want to search in music column from DB
+			$query .= "`director` LIKE ? ";			$bindings[] = '%'.implode(' ',$words).'%';
 			$query .= "))";
 		}
 		if($category != "") {
