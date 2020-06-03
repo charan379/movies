@@ -115,6 +115,7 @@ class Movies extends Database {
 			# un-comment above line if u want to search in producer column from DB
 			#$query .= "`music` LIKE ? OR ";		$bindings[] = '%'.implode(' ',$words).'%';
 			# un-comment above line if u want to search in music column from DB
+            $query .= "`languages` LIKE ? OR ";	$bindings[] = '%'.implode(' ',$words).'%';
 			$query .= "`director` LIKE ? ";			$bindings[] = '%'.implode(' ',$words).'%';
 			$query .= "))";
 		}
