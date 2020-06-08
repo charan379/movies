@@ -49,8 +49,8 @@ include("header.php");
 			<?php foreach($developer_records as $developer) { ?>
 			   <tr>
 			   <td><?php echo $developer ['name']; ?></td>
+				 <td><?php echo $developer ['year']; ?></td>
 				 <td><?php echo $developer ['rating']; ?></td>
-			   <td><?php echo $developer ['year']; ?></td>
 			   <td><?php echo $developer ['genres']; ?></td>
 			   <td><?php echo $developer ['director']; ?></td>
 				 <td><?php echo $developer ['languages']; ?></td>
