@@ -87,7 +87,7 @@ Screenshots
 
 <img src="docs/screenshots/login.jpg" alt="Login" width="45%"> <img src="docs/screenshots/collection.jpg" alt="Movie collection" width="45%">
 <img src="docs/screenshots/search.jpg" alt="Search" width="45%"> <img src="docs/screenshots/search2.jpeg" alt="Search" width="45%"> <img src="docs/screenshots/moviepage.jpg" alt="Movie" width="45%">
-<img src="docs/screenshots/trailer.jpg" alt="Movie trailer" width="45%"> <img src="docs/screenshots/download.jpeg" alt="Download movies" width="45%">
+<img src="docs/screenshots/trailer.jpg" alt="Movie trailer" width="45%"> <img src="docs/screenshots/download.jpg" alt="Download movies" width="45%">
 <img src="docs/screenshots/add.jpg" alt="ADD from IMDb" width="45%"> <img src="docs/screenshots/users.jpg" alt="Users" width="45%">
 <img src="docs/screenshots/torrent.jpg" alt="torrents" width="45%"> <img src="docs/screenshots/export.jpg" alt="Export to xls sheet" width="45%">
 <img src="docs/screenshots/iconinfo.jpg" alt="iconinfo" width="45%"> 
