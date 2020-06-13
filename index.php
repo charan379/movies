@@ -208,24 +208,24 @@ switch ($go) {
 						break;
 
 	case "export-to-csv":		/**
-             	* Download movie list as CSV
-             	*/
-              // Exporting movies is only possible when logged in
-             if($loggedin) {
-	          // Export
-	           require_once($loc . "includes/export.inc.php");
-	           exit();
-            }
-             else {
-	            $Website->assign("main", "users/login.html");
-            }
+                                 	* Download movie list as CSV
+                                  	*/
+                                       // Exporting movies is only possible when logged in
+                                      if($loggedin) {
+	                              // Export
+	                              require_once($loc . "includes/export.inc.php");
+	                                 exit();
+                                       }
+                                      else {
+	                               $Website->assign("main", "users/login.html");
+                                               }
 						break;
 
 	case "export-to-xls":		/**
-									* Download movie list as XLS Sheet
+					* Download movie list as XLS Sheet
 						  	  */
 					  	// Exporting movies is only possible when logged in
-			  			if($loggedin) {
+			  		if($loggedin) {
 			  			// Export
 					    header("Location: export-to-xls/index.php");
 							}
@@ -233,6 +233,19 @@ switch ($go) {
 			  		    $Website->assign("main", "users/login.html");
 			     	}
 	 				 break;
+		
+  	case "export-to-xlsx":		/**
+			 		* Download movie list as XLS Sheet
+			 		 */
+			 		// Exporting movies is only possible when logged in
+			 		if($loggedin) {
+			 		// Export
+			 		 header("Location: export-to-xlsx/index.php");
+			 		}
+			 		 else {
+			 		 $Website->assign("main", "users/login.html");
+			 		   	}
+			 		 break;
 
 
 	case "users":		/**
