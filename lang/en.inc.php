@@ -45,9 +45,10 @@ define("REMEMBER_ME",								"Remember me");
 // Menu
 define("ADD",										"Add");
 define("UPDATE_ALL_MOVIE_INFORMATION",				"Update all");
-define("EXPORT_TO_CSV",								"Export");
+define("EXPORT_TO_CSV",								"Export to CSV");
 define("EXPORT_TO_XLS",                "Export to XLS");
 define("EXPORT_TO_XLSX",                "Export to XLSX");
+define("EXPORT_DATA",                  "Export");
 // Search
 define("SEARCH_DEFAULT_TEXT",						"Search...");
 define("CATEGORIES",								"Categories");
