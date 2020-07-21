@@ -252,10 +252,10 @@
             <div class="box-body">
               <p> <b> Download Via Torrents &#187;&#187 </b>
             {if $movie->seasons && $movie->seasons != 0}
-              <a href="{webroot}/1337x/?word={$movie->name|urlencode|lower}/" target="_blank"> <button class="btn btn-primary" type="button">
+              <a href="{$webroot}/1337x/?word={$movie->name|urlencode|lower}/" target="_blank"> <button class="btn btn-primary" type="button">
                 <i class="fa fa-download fa-fw" title="{$smarty.const.GO_TO_TORRENTS|htmlentities:3:'UTF-8'}" aria-hidden="true"></i><span class="hidden-sm">  {$smarty.const.GO_TO_TORRENTS|htmlentities:3:'UTF-8'}</span></button> </a>
               {else}
-              <a href="{webroot}/1337x/?word={$movie->name|urlencode|lower} {$movie->year|urlencode}/" target="_blank">  <button class="btn btn-primary" type="button">
+              <a href="{$webroot}/1337x/?word={$movie->name|urlencode|lower} {$movie->year|urlencode}/" target="_blank">  <button class="btn btn-primary" type="button">
                <i class="fa fa-download fa-fw" title="{$smarty.const.GO_TO_TORRENTS|htmlentities:3:'UTF-8'}" aria-hidden="true"></i><span class="hidden-sm">  {$smarty.const.GO_TO_TORRENTS|htmlentities:3:'UTF-8'}</span></button> </a>
               {/if}</p>
             </div>
