@@ -192,11 +192,14 @@ if(!isset($refreshMovieList)) {
 	}
 	$numberowned = 0;
 	$numberseen = 0;
+	$numbertitles = 0;
 	foreach($movies as $m) {
 		for($i = 0; $i < count($numbertypes); $i++) {
 			if($numbertypes[$i][0] === $m['format'])
 			$numbertypes[$i][1] += 1;
 		}
+		if($m['id'])
+			$numbertitles++;
 		if($m['own'])
 			$numberowned++;
 		if($m['seen'])
@@ -205,4 +208,5 @@ if(!isset($refreshMovieList)) {
 	$Website->assign("numbertypes", $numbertypes);
 	$Website->assign("numberowned", $numberowned);
 	$Website->assign("numberseen", $numberseen);
+	$Website->assign("numbertitles", $numbertitles);
 }

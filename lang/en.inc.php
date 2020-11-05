@@ -174,6 +174,7 @@ define("CAST",										"Cast");
 define("MOVIE_FILE_URL",           "Movie Download-able URL");
 define("MOVIE_URL",                  "Movie URL");
 define("SEARCH_FOR_MOVIE",           "Search For Movie");
+define("ADDED_ON",                     "Added Date");
 // Automatic update
 define("AUTOUPDATE_INFO",							"Your movies are automatically updated from IMDb. This may take a while, so please be patient...");
 define("STOP_UPDATE",								"Stop the update");

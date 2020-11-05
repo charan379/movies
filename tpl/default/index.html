@@ -98,8 +98,13 @@
         </div>
         <!-- Default to the left -->
 		{if $main == 'movies/collection.html'}
-		{$smarty.const.NUMBER_OF_TITLES|htmlentities:3:'UTF-8'} <strong>{$numberowned}</strong> |
-		{$smarty.const.UNSEEN|htmlentities:3:'UTF-8'} <strong>{$numberowned-$numberseen}</strong>
+		{$smarty.const.NUMBER_OF_TITLES|htmlentities:3:'UTF-8'} : <strong>{$numbertitles}</strong> |
+		  <i class="fa fa-eye" aria-hidden="true"></i>&nbsp; <strong>{$numberseen}</strong> |
+          <i class="fa fa-eye-slash" aria-hidden="true"></i>&nbsp; <strong>{$numbertitles-$numberseen}</strong>
+		{if $loggedin && $User->isAdmin()}
+		| <i class="fa fa-star" aria-hidden="true"></i>&nbsp; <strong>{$numberowned}</strong> |
+		  <i class="fa fa-star-o" aria-hidden="true"></i>&nbsp; <strong>{$numbertitles-$numberowned}</strong>
+        {/if}
 		{/if}&nbsp;
       </footer>
     </div><!-- ./wrapper -->
