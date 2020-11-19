@@ -70,21 +70,8 @@ if(!isset($User) && isset($_SESSION["User"])) {
 }
 
 // Login
-if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response']))
-  {
-        $secret = 'google recaptcha secret key';
-        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
-        $responseData = json_decode($verifyResponse);
-        if($responseData->success)
-        {
-             if(!isset($User) && isset($_POST["username"]) && isset($_POST["password"])) {
+if(!isset($User) && isset($_POST["username"]) && isset($_POST["password"])) {
 	$User = $userdm->getByName($_POST["username"]);
-        }
-        else
-        {
-            $errMsg = 'Robot verification failed, please try again.';
-        }
-   }
 	/**
 	 * Password correct? $converted = true; OR
 	 * Truncated passwords at 72 characters in php4dvd <= 3.2.0 OR
