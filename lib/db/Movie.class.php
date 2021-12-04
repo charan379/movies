@@ -36,7 +36,6 @@ class Movie {
 		$this->tv = ($imdbmovie->is_serial() || $imdbmovie->seasons()) ? true : false;
 		$this->seasons = $this->htmldecode($imdbmovie->seasons());
 		$this->trailer = isset($this->trailer) ? $this->trailer : "";
-		$this->dolink = isset($this->dolink) ? $this->dolink : "";
 		$this->notes = isset($this->notes) ? $this->notes : "";
 		$this->taglines = $this->join("\n\n", $this->htmldecode($imdbmovie->taglines()));
 		$this->plotoutline = trim(strip_tags($this->htmldecode($imdbmovie->plotoutline())));
@@ -54,7 +53,7 @@ class Movie {
 		$this->music = $this->join("\n", $this->htmldecode($imdbmovie->composer()));
 		$this->cast = $this->join("\n", $this->htmldecode($imdbmovie->cast()));
 	}
-
+	
 	private function htmldecode($content) {
 		if(is_array($content)) {
 			$tmp = array();
@@ -66,7 +65,7 @@ class Movie {
 			return html_entity_decode($content, ENT_QUOTES, 'UTF-8');
 		}
 	}
-
+	
 	private function join($glue, $pieces, $separator = '', $striptags = true, $allowable_tags = '') {
 		$p = '';
 		foreach($pieces as $k => $v) {
@@ -81,12 +80,12 @@ class Movie {
 		}
 		return rtrim($p);
 	}
-
+	
 	private function parentalGuidance($mpaa,$parental_guidance) {
 		$want	= $parental_guidance["countries"];
 		$age	= $parental_guidance["age"];
 		$map	= $parental_guidance["map"];
-
+		
 		// No mpaa available
 		if(!is_array($mpaa) || empty($mpaa))
 			return $age;
@@ -95,26 +94,26 @@ class Movie {
 		$mapKeys = array_keys($map);
 		$mpaaKeys = array_keys($mpaa);
 		$mapAvailable = array_intersect($mapKeys,$mpaaKeys);
-
-		// No map available
-		if(empty($mapAvailable))
+		
+		// No map available 
+		if(empty($mapAvailable)) 
 			return $age;
-
+		
 		// Do I prefer any of the available countries
 		$wanted = array_intersect($want,$mapAvailable);
 		if(empty($wanted))
 			return $this->_parentalGuidance($mpaa,$map,$age);
-
+		
 		// Return first matching rating
 		foreach($wanted as $w) {
 			if( isset($map[$w][$mpaa[$w]]) )
 				return $map[$w][$mpaa[$w]];
 		}
-
+		
 		// Rating not available
 		return $this->_parentalGuidance($mpaa, $map, $age);
 	}
-
+	
 	private function _parentalGuidance($mpaa, $map, $age) {
 		foreach($mpaa as $c => $pg) {
 			if( isset($map[$c][$pg]) )
@@ -122,7 +121,7 @@ class Movie {
 		}
 		return $age;
 	}
-
+	
 	public function getList($field) {
 		$list = $this->{$field};
 		$list = preg_split("/\r?\n/", $list);
@@ -134,7 +133,7 @@ class Movie {
 		}
 		return $tmp;
 	}
-
+	
 	public function formatPlots($plots) {
 		$tmp = array();
 		if($count = count($plots)) {
@@ -153,14 +152,14 @@ class Movie {
 		}
 		return $tmp;
 	}
-
+	
 	public function getYouTubeTrailerId() {
 		if(preg_match("/youtube.*?v=([^&#]+)/i", $this->trailer, $matches)) {
 			return $matches[1];
 		}
 		return false;
 	}
-
+	
 	public function photo($dir = false) {
 		if(!$dir) {
 			global $photopath, $webroot;
@@ -168,7 +167,7 @@ class Movie {
 		}
 		return $dir.$this->id.".jpg";
 	}
-
+	
 	public function hasPhoto($dir = false) {
 		if(!$dir) {
 			global $photopath;
@@ -176,7 +175,7 @@ class Movie {
 		}
 		return file_exists($dir.$this->id.".jpg");
 	}
-
+	
 	public function addPhoto($field, $dir = false) {
 		global $settings;
 		if(!$dir) {
@@ -184,7 +183,7 @@ class Movie {
 			$dir = $photopath;
 		}
 		$photo = $dir.$this->id.".jpg";
-
+		
 		$image = new Bulletproof\Image($_FILES);
 		$image->setName($this->id)
 		      ->setMime(array('jpeg'))
@@ -193,7 +192,7 @@ class Movie {
 			  ->setDimension($settings["photo"]["max_width"], $settings["photo"]["max_height"]);
 
 		if($image[$field]){
-			$upload = $image->upload();
+			$upload = $image->upload(); 
 
 			if($upload){
 				if(!rename($image->getFullPath(),$photo))
@@ -212,12 +211,12 @@ class Movie {
 				// OK
 			}else{
 				return false;
-				// $image["error"];
+				// $image["error"]; 
 			}
 		}
 		return false;
 	}
-
+	
 	public function removePhoto($dir = false) {
 		if(!$dir) {
 			global $photopath;
@@ -226,7 +225,7 @@ class Movie {
 		if($this->hasPhoto($dir))
 			unlink($dir.$this->id.".jpg");
 	}
-
+	
 	public function cover($dir = false) {
 		if(!$dir) {
 			global $coverpath, $webroot;
@@ -234,7 +233,7 @@ class Movie {
 		}
 		return $dir.$this->id.".jpg";
 	}
-
+	
 	public function hasCover($dir = false) {
 		if(!$dir) {
 			global $coverpath;
@@ -242,7 +241,7 @@ class Movie {
 		}
 		return file_exists($dir.$this->id.".jpg");
 	}
-
+	
 	public function addCover($field, $dir = false) {
 		global $settings;
 		if(!$dir) {
@@ -251,7 +250,7 @@ class Movie {
 		}
 		$cover = $dir.$this->id.".jpg";
 		$thumb = $dir."tn_".$this->id.".jpg";
-
+		
 		$image = new Bulletproof\Image($_FILES);
 		$image->setName($this->id)
 		      ->setMime(array('jpeg'))
@@ -260,7 +259,7 @@ class Movie {
 			  ->setDimension($settings["photo"]["max_height"], $settings["photo"]["max_width"]); // Width, Height
 
 		if($image[$field]){
-			$upload = $image->upload();
+			$upload = $image->upload(); 
 
 			if($upload){
 				if(!rename($image->getFullPath(),$cover))
@@ -285,7 +284,7 @@ class Movie {
 		}
 		return false;
 	}
-
+	
 	public function removeCover($dir = false) {
 		if(!$dir) {
 			global $coverpath;
