@@ -109,7 +109,7 @@ define("ON",										"on");
 define("DOWNLOAD_PAGE_HEAD",            "Download Page");
 define("DOWNLOAD_MOVIE_SECTION",        "Download & Streaming Links");
 define("GO_TO_TORRENTS",            "Go To Torrents");
-define("GO_TO_Google",               "Search For Indexes");
+define("GO_TO_GOOGLE",               "Search For Indexes");
 
 /**
 * Add/edit movie
