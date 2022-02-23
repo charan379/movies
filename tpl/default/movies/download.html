@@ -263,10 +263,10 @@
               <p> <b> Search for indexes &#187;&#187 </b>
             {if $movie->seasons && $movie->seasons != 0}
               <a href="https://www.google.com/search?q=index+of+{$movie->name|urlencode|lower|replace:'+':'-'|replace:'%3a':':'}/" target="_blank"> <button class="btn btn-primary" type="button">
-                <i class="fa-brands fa-google fa-fw" title="{$smarty.const.GO_TO_Google|htmlentities:3:'UTF-8'}" aria-hidden="true"></i><span class="hidden-sm">  {$smarty.const.GO_TO_STREAM|htmlentities:3:'UTF-8'}</span></button> </a>
+                <i class="fa fa-google fa-fw" title="{$smarty.const.GO_TO_Google|htmlentities:3:'UTF-8'}" aria-hidden="true"></i><span class="hidden-sm">  {$smarty.const.GO_TO_STREAM|htmlentities:3:'UTF-8'}</span></button> </a>
               {else}
                <a href="https://www.google.com/search?q=index+of+{$movie->name|urlencode|lower|replace:'+':'-'|replace:'%3a':':'|replace:'%27':''}-{$movie->year|urlencode}+series/" target="_blank">  <button class="btn btn-primary" type="button">
-               <i class="fa-brands fa-google  fa-fw" title="{$smarty.const.GO_TO_Google|htmlentities:3:'UTF-8'}" aria-hidden="true"></i><span class="hidden-sm">  {$smarty.const.GO_TO_STREAM|htmlentities:3:'UTF-8'}</span></button> </a>
+               <i class="fa fa-google  fa-fw" title="{$smarty.const.GO_TO_Google|htmlentities:3:'UTF-8'}" aria-hidden="true"></i><span class="hidden-sm">  {$smarty.const.GO_TO_STREAM|htmlentities:3:'UTF-8'}</span></button> </a>
               {/if}</p>
             </div>
           </div>
